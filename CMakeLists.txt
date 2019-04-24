@@ -3,5 +3,5 @@ project(SecureCoding C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(echod echod.c echo.c)
+add_executable(echod echod.c)
 add_executable(echo echo.c)

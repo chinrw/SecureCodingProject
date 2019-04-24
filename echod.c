@@ -9,7 +9,7 @@
 #include <sys/errno.h>
 
 #define  BUFFER_SIZE 1024
-#define  PORT 8
+#define  PORT 7
 #ifndef max
 #define max(a, b) ( ((a) > (b)) ? (a) : (b) )
 #endif
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
 //            Receive data from client
         } else if (FD_ISSET(client_sockfd, &read_fds)) {
             memset(buf, 0, BUFFER_SIZE);
-            int n = recv(client_sockfd, buf, BUFFER_SIZE - 1, 0);
+            int n = recv(client_sockfd, buf, BUFFER_SIZE, 0);
 //            Recv error
             if (n == -1) {
                 perror("ERROR: recv error");

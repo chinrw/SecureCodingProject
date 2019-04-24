@@ -143,7 +143,6 @@ echo.o: echo.c.o
 # target to build an object file
 echo.c.o:
 	$(MAKE) -f CMakeFiles/echo.dir/build.make CMakeFiles/echo.dir/echo.c.o
-	$(MAKE) -f CMakeFiles/echod.dir/build.make CMakeFiles/echod.dir/echo.c.o
 .PHONY : echo.c.o
 
 echo.i: echo.c.i
@@ -153,7 +152,6 @@ echo.i: echo.c.i
 # target to preprocess a source file
 echo.c.i:
 	$(MAKE) -f CMakeFiles/echo.dir/build.make CMakeFiles/echo.dir/echo.c.i
-	$(MAKE) -f CMakeFiles/echod.dir/build.make CMakeFiles/echod.dir/echo.c.i
 .PHONY : echo.c.i
 
 echo.s: echo.c.s
@@ -163,7 +161,6 @@ echo.s: echo.c.s
 # target to generate assembly for a file
 echo.c.s:
 	$(MAKE) -f CMakeFiles/echo.dir/build.make CMakeFiles/echo.dir/echo.c.s
-	$(MAKE) -f CMakeFiles/echod.dir/build.make CMakeFiles/echod.dir/echo.c.s
 .PHONY : echo.c.s
 
 echod.o: echod.c.o

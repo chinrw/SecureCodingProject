@@ -96,7 +96,6 @@
 		</Build>
 		<Unit filename="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/echo.c">
 			<Option target="echo"/>
-			<Option target="echod"/>
 		</Unit>
 		<Unit filename="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/echod.c">
 			<Option target="echod"/>
