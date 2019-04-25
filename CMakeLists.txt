@@ -5,3 +5,5 @@ set(CMAKE_C_STANDARD 99)
 
 add_executable(echod echod.c)
 add_executable(echo echo.c)
+add_executable(daytimed daytimed.c)
+add_executable(daytime daytime.c)

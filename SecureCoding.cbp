@@ -17,6 +17,34 @@
 					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="daytimed">
+				<Option output="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/daytimed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 daytimed"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="daytimed/fast">
+				<Option output="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/daytimed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 daytimed/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/chin39/Dropbox/RPI/Intro\ to\ Info\ Sec/SecureCoding/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="echo">
 				<Option output="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/echo" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding"/>
@@ -94,6 +122,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/daytimed.c">
+			<Option target="daytimed"/>
+		</Unit>
 		<Unit filename="/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding/echo.c">
 			<Option target="echo"/>
 		</Unit>

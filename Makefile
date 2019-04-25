@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = "/Users/chin39/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.6707.69/CLion.app/Contents/bin/cmake/mac/bin/cmake"
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.14.3/bin/cmake
 
 # The command to remove a file.
-RM = "/Users/chin39/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.6707.69/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
+RM = /usr/local/Cellar/cmake/3.14.3/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = "/Users/chin39/Dropbox/RPI/Intro to Info Sec/SecureCoding"
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"/Users/chin39/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.6707.69/CLion.app/Contents/bin/cmake/mac/bin/cmake" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.14.3/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"/Users/chin39/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/191.6707.69/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/Cellar/cmake/3.14.3/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named daytime
+
+# Build rule for target.
+daytime: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 daytime
+.PHONY : daytime
+
+# fast build rule for target.
+daytime/fast:
+	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/build
+.PHONY : daytime/fast
+
+#=============================================================================
+# Target rules for targets named daytimed
+
+# Build rule for target.
+daytimed: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 daytimed
+.PHONY : daytimed
+
+# fast build rule for target.
+daytimed/fast:
+	$(MAKE) -f CMakeFiles/daytimed.dir/build.make CMakeFiles/daytimed.dir/build
+.PHONY : daytimed/fast
+
+#=============================================================================
 # Target rules for targets named echo
 
 # Build rule for target.
@@ -135,6 +161,60 @@ echod: cmake_check_build_system
 echod/fast:
 	$(MAKE) -f CMakeFiles/echod.dir/build.make CMakeFiles/echod.dir/build
 .PHONY : echod/fast
+
+daytime.o: daytime.c.o
+
+.PHONY : daytime.o
+
+# target to build an object file
+daytime.c.o:
+	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/daytime.c.o
+.PHONY : daytime.c.o
+
+daytime.i: daytime.c.i
+
+.PHONY : daytime.i
+
+# target to preprocess a source file
+daytime.c.i:
+	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/daytime.c.i
+.PHONY : daytime.c.i
+
+daytime.s: daytime.c.s
+
+.PHONY : daytime.s
+
+# target to generate assembly for a file
+daytime.c.s:
+	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/daytime.c.s
+.PHONY : daytime.c.s
+
+daytimed.o: daytimed.c.o
+
+.PHONY : daytimed.o
+
+# target to build an object file
+daytimed.c.o:
+	$(MAKE) -f CMakeFiles/daytimed.dir/build.make CMakeFiles/daytimed.dir/daytimed.c.o
+.PHONY : daytimed.c.o
+
+daytimed.i: daytimed.c.i
+
+.PHONY : daytimed.i
+
+# target to preprocess a source file
+daytimed.c.i:
+	$(MAKE) -f CMakeFiles/daytimed.dir/build.make CMakeFiles/daytimed.dir/daytimed.c.i
+.PHONY : daytimed.c.i
+
+daytimed.s: daytimed.c.s
+
+.PHONY : daytimed.s
+
+# target to generate assembly for a file
+daytimed.c.s:
+	$(MAKE) -f CMakeFiles/daytimed.dir/build.make CMakeFiles/daytimed.dir/daytimed.c.s
+.PHONY : daytimed.c.s
 
 echo.o: echo.c.o
 
@@ -196,10 +276,18 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... echo"
 	@echo "... rebuild_cache"
+	@echo "... daytime"
+	@echo "... daytimed"
+	@echo "... echo"
 	@echo "... edit_cache"
 	@echo "... echod"
+	@echo "... daytime.o"
+	@echo "... daytime.i"
+	@echo "... daytime.s"
+	@echo "... daytimed.o"
+	@echo "... daytimed.i"
+	@echo "... daytimed.s"
 	@echo "... echo.o"
 	@echo "... echo.i"
 	@echo "... echo.s"
