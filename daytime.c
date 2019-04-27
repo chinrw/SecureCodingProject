@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -24,6 +23,14 @@ int main(int argc, char *argv[]) {
     char buf[BUFFER_SIZE];
     int client_sockfd;
 
+
+//    Check we have the right number of arguments
+    if (argc != 3) {
+        printf("usage: %s <IP Address> <Port>\n", argv[0]);
+        exit(1);
+    }
+
+
 //    Create socket
     client_sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (client_sockfd == -1) {
@@ -34,8 +41,9 @@ int main(int argc, char *argv[]) {
 //    Set server info
     memset(&server_addr, 0, sizeof(struct sockaddr_in));
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(PORT);
-    if (inet_pton(AF_INET, SRV_IP, &server_addr.sin_addr) == 0) {
+    server_addr.sin_port = htons(strtol(argv[2], &argv[2], 10));
+
+    if (inet_pton(AF_INET, argv[1], &server_addr.sin_addr) == 0) {
         handle_error("inet_pton()");
         exit(1);
     }
@@ -47,7 +55,7 @@ int main(int argc, char *argv[]) {
     }
 
     socklen_t len;
-    printf("Connect to server ip:%s port:%d\n", SRV_IP, PORT);
+    printf("Connect to server ip:%s port:%s\n", argv[1], argv[2]);
     if ((len = recv(client_sockfd, buf, BUFFER_SIZE, 0)) < 0) {
         handle_error("Recv()");
         exit(1);

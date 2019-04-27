@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named daytime
-
-# Build rule for target.
-daytime: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 daytime
-.PHONY : daytime
-
-# fast build rule for target.
-daytime/fast:
-	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/build
-.PHONY : daytime/fast
-
-#=============================================================================
 # Target rules for targets named daytimed
 
 # Build rule for target.
@@ -135,6 +122,19 @@ daytimed: cmake_check_build_system
 daytimed/fast:
 	$(MAKE) -f CMakeFiles/daytimed.dir/build.make CMakeFiles/daytimed.dir/build
 .PHONY : daytimed/fast
+
+#=============================================================================
+# Target rules for targets named daytime
+
+# Build rule for target.
+daytime: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 daytime
+.PHONY : daytime
+
+# fast build rule for target.
+daytime/fast:
+	$(MAKE) -f CMakeFiles/daytime.dir/build.make CMakeFiles/daytime.dir/build
+.PHONY : daytime/fast
 
 #=============================================================================
 # Target rules for targets named echo
@@ -277,8 +277,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... daytime"
 	@echo "... daytimed"
+	@echo "... daytime"
 	@echo "... echo"
 	@echo "... edit_cache"
 	@echo "... echod"
