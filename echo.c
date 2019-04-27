@@ -63,7 +63,20 @@ int main(int argc, char *argv[]) {
 //    Set server info
     memset(&server_addr, 0, sizeof(struct sockaddr_in));
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(strtol(argv[2], &argv[2], 10));
+
+    char *next = NULL;
+    long port = strtol(argv[2], &next, 10);
+    if ((next == argv[2]) || (*next != '\0')) {
+        printf("Port '%s' is not valid\n", argv[2]);
+        exit(1);
+    }
+
+    if (port < 0) {
+        printf("Port '%s' is negative\n", argv[2]);
+        exit(1);
+    }
+
+    server_addr.sin_port = htons(port);
 
     if (inet_pton(AF_INET, argv[1], &server_addr.sin_addr) == 0) {
         handle_error("inet_pton()");
