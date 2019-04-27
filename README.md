@@ -8,10 +8,11 @@ Test on CentOS7 and MacOS
 
 ./echod
 
+Server runs on port 7
+
+
 ### Client
 usage: ./echo \<IP Address> \<Port>
-
-Server runs on port 7
 
 And then input message, the message will be send back
 
