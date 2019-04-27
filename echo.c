@@ -40,12 +40,12 @@ char *inputString(FILE *fp, size_t *size) {
             str = new_str;
         }
     }
-    str[len++] = '\n';
     *size = (*size) + 16;
     new_str = realloc(str, sizeof(char) * (*size));
     if (!new_str)
         return str;
     str = new_str;
+    str[len++] = '\n';
     str[len++] = '\0';
     *size = len;
     return str;
