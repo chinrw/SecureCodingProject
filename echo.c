@@ -33,14 +33,16 @@ char *inputString(FILE *fp, size_t *size) {
     while (EOF != (ch = fgetc(fp)) && ch != '\n') {
         str[len++] = ch;
         if (len == *size) {
-            new_str = realloc(str, sizeof(char) * (*size += 16));
+            *size = (*size) * 2;
+            new_str = realloc(str, sizeof(char) * (*size));
             if (!new_str)
                 return str;
             str = new_str;
         }
     }
     str[len++] = '\n';
-    new_str = realloc(str, sizeof(char) * (*size += 1));
+    *size = (*size) + 16;
+    new_str = realloc(str, sizeof(char) * (*size));
     if (!new_str)
         return str;
     str = new_str;
@@ -83,7 +85,6 @@ int main(int argc, char *argv[]) {
         printf("Port '%s' is negative\n", argv[2]);
         exit(1);
     }
-
     server_addr.sin_port = htons(port);
 
     if (inet_pton(AF_INET, argv[1], &server_addr.sin_addr) == 0) {
@@ -102,7 +103,7 @@ int main(int argc, char *argv[]) {
 
 
     while (1) {
-        size_t len = 0;
+        size_t len = 10;
         char *msg = inputString(stdin, &len);
         len--;
         size_t chunks = (len / (BUFFER_SIZE - 1)) + 1;
