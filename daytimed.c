@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
             printf("Accept Client %s\n", inet_ntoa(client_addr.sin_addr));
             time_t t = time(NULL);
             struct tm *tm = localtime(&t);
-            assert(strftime(buf, sizeof(buf), "%c", tm));
+            assert(strftime(buf, sizeof(buf), "%c\n", tm));
             send(client_sockfd, buf, strnlen(buf, BUFFER_SIZE), 0);
             close(client_sockfd);
             client_sockfd = -1;
