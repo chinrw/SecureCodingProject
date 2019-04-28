@@ -20,11 +20,11 @@ And then input message, the message will be send back
 
 ## Server
 
-./daytime
+./daytimed
 
 Server runs on port 13
 
 ### Client
-usage: ./daytimed \<IP Address> \<Port>
+usage: ./daytime \<IP Address> \<Port>
 
 
